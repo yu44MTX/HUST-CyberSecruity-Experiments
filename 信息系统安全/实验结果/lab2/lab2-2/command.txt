@@ -1,0 +1,10 @@
+# 打开/tmp和/jail/tmp文件夹
+touch /tmp/test.txt
+sudo chown root /tmp/test.txt
+touch /jail/tmp/test.txt
+sudo chown root /jail/tmp/test.txt
+
+# 执行脚本前先检查libc基址和函数栈帧基址是否正确
+python3 exploit-template.py 127.0.0.1 80
+
+# 然后检查两个文件是否被删除
